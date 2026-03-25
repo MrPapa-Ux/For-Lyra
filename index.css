@@ -1,0 +1,272 @@
+/* ============================================================
+   KAPTEN CHIPUY'S SOVEREIGN CSS - VERSION 2.0 (LYRA EDITION)
+   ============================================================ */
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f8c9d4;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  animation: backgroundAnimation 12s infinite alternate;
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+/* Background Animation */
+@keyframes backgroundAnimation {
+  0% { background-color: #f8c9d4; }
+  50% { background-color: #a8d8ff; }
+  100% { background-color: #f8e4a3; }
+}
+
+/* Container untuk konten utama */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+/* Card Box Styling (Audio & Content) */
+.audio-card-box, .card-box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.text-audio, .text-above, .text-below {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Image Section */
+.image-section {
+  margin: 20px 0;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Map Section */
+.map-section iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border: 0;
+}
+
+/* ==================== Envelope Love Letter (REVISI GEDE) ==================== */
+
+.envlope-wrapper {
+  min-height: 550px; /* Tinggi ditambah supaya letter pas naik nda kepotong */
+  width: 100%;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#envelope {
+  position: relative;
+  width: 450px;   /* LEBAR JADI GEDE */
+  height: 300px;  /* TINGGI JADI GEDE */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #d9534f; 
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
+}
+
+/* Itungan segitiga flap (Sesuai lebar 450px) */
+.flap {
+  border-left: 225px solid transparent;
+  border-right: 225px solid transparent;
+  border-bottom: 150px solid transparent;
+  border-top: 170px solid #d9534f;
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* Itungan segitiga pocket (Sesuai lebar 450px) */
+.pocket {
+  border-left: 225px solid #f5a3a2; 
+  border-right: 225px solid #f5a3a2;
+  border-bottom: 150px solid #ff6f61; 
+  border-top: 150px solid transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.letter {
+  position: relative;
+  background-color: #fff;
+  width: 92%;
+  margin: 0 auto;
+  height: 95%;
+  top: 3%;
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  font-family: Arial, sans-serif; /* FONT NORMAL */
+  overflow-y: auto; /* Jika teks kepanjangan bisa scroll */
+  z-index: 1;
+}
+
+/* Konten teks di dalam surat */
+.words {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 10%;
+  background-color: #ffe6e6;
+  padding: 20px;
+  text-align: left; /* Rata kiri biar list lagu rapi */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border-radius: 6px;
+  color: #333;
+}
+
+/* Animasi Surat Naik (Disesuaikan tinggi amplop) */
+.open .letter {
+  transform: translateY(-180px); /* Naik lebih tinggi biar kebaca semua */
+  transition: transform 0.4s 0.6s ease, z-index 0.6s;
+  z-index: 2;
+}
+
+.close .letter {
+  transform: translateY(0px);
+  transition: transform 0.4s ease, z-index 1s;
+  z-index: 1;
+}
+
+/* Animasi Tutup Amplop */
+.open .flap {
+  transform: rotateX(180deg);
+  transition: transform 0.4s ease, z-index 0.6s;
+  z-index: 1;
+}
+
+.close .flap {
+  transform: rotateX(0deg);
+  transition: transform 0.4s 0.6s ease, z-index 5;
+  z-index: 5;
+}
+
+/* Hearts Animation */
+.hearts {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.heart:before, .heart:after {
+  position: absolute;
+  content: "";
+  left: 25px;
+  top: 0;
+  width: 25px;
+  height: 40px;
+  background: #e60073;
+  border-radius: 25px 25px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.close .heart { opacity: 0; animation: none; }
+
+.a1 { left: 20%; transform: scale(0.6); animation: slideUp 4s linear infinite, sideSway 2s ease-in-out infinite alternate; animation-delay: 0.7s; }
+.a2 { left: 55%; transform: scale(1); animation: slideUp 5s linear infinite, sideSway 4s ease-in-out infinite alternate; animation-delay: 1.2s; }
+.a3 { left: 10%; transform: scale(0.8); animation: slideUp 7s linear infinite, sideSway 2s ease-in-out infinite alternate; animation-delay: 1.7s; }
+
+@keyframes slideUp { 0% { top: 0; opacity: 1; } 100% { top: -600px; opacity: 0; } }
+@keyframes sideSway { 0% { margin-left: 0px; } 100% { margin-left: 50px; } }
+
+/* Tombol OPEN & CLOSE */
+.reset {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.reset button {
+  font-weight: 800;
+  background-color: #fff;
+  border: solid 2px #d9534f;
+  border-radius: 8px;
+  color: #d9534f;
+  padding: 12px 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+/* ==================== RESPONSIVE (FOR MOBILE) ==================== */
+@media (max-width: 500px) {
+  #envelope {
+    width: 320px; /* Mengecil di HP biar nda kepotong */
+    height: 220px;
+  }
+  .flap {
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 130px solid #d9534f;
+  }
+  .pocket {
+    border-left: 160px solid #f5a3a2;
+    border-right: 160px solid #f5a3a2;
+    border-bottom: 110px solid #ff6f61;
+    border-top: 110px solid transparent;
+  }
+  .words {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .open .letter {
+    transform: translateY(-130px);
+  }
+}
