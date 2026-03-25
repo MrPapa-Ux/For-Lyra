@@ -18,7 +18,7 @@ body {
   margin: 0;
   padding: 20px;
   animation: backgroundAnimation 12s infinite alternate;
-  overflow-x: hidden; /* Mencegah scroll horizontal */
+  overflow-x: hidden;
 }
 
 /* Background Animation */
@@ -64,6 +64,10 @@ body {
 }
 
 /* Map Section */
+.map-section {
+  margin: 30px 0;
+}
+
 .map-section iframe {
   width: 100%;
   height: 450px;
@@ -72,10 +76,10 @@ body {
   border: 0;
 }
 
-/* ==================== Envelope Love Letter (REVISI GEDE) ==================== */
+/* ==================== Envelope Love Letter ==================== */
 
 .envlope-wrapper {
-  min-height: 550px; /* Tinggi ditambah supaya letter pas naik nda kepotong */
+  min-height: 550px;
   width: 100%;
   margin-top: 60px;
   margin-bottom: 50px;
@@ -87,8 +91,8 @@ body {
 
 #envelope {
   position: relative;
-  width: 450px;   /* LEBAR JADI GEDE */
-  height: 300px;  /* TINGGI JADI GEDE */
+  width: 450px;
+  height: 300px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #d9534f; 
@@ -102,7 +106,6 @@ body {
   z-index: 3;
 }
 
-/* Itungan segitiga flap (Sesuai lebar 450px) */
 .flap {
   border-left: 225px solid transparent;
   border-right: 225px solid transparent;
@@ -112,7 +115,6 @@ body {
   pointer-events: none;
 }
 
-/* Itungan segitiga pocket (Sesuai lebar 450px) */
 .pocket {
   border-left: 225px solid #f5a3a2; 
   border-right: 225px solid #f5a3a2;
@@ -131,12 +133,11 @@ body {
   top: 3%;
   border-radius: 6px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
-  font-family: Arial, sans-serif; /* FONT NORMAL */
-  overflow-y: auto; /* Jika teks kepanjangan bisa scroll */
+  font-family: Arial, sans-serif;
+  overflow-y: auto;
   z-index: 1;
 }
 
-/* Konten teks di dalam surat */
 .words {
   position: absolute;
   left: 5%;
@@ -144,16 +145,15 @@ body {
   top: 10%;
   background-color: #ffe6e6;
   padding: 20px;
-  text-align: left; /* Rata kiri biar list lagu rapi */
+  text-align: left;
   font-size: 1.1rem;
   line-height: 1.6;
   border-radius: 6px;
   color: #333;
 }
 
-/* Animasi Surat Naik (Disesuaikan tinggi amplop) */
 .open .letter {
-  transform: translateY(-180px); /* Naik lebih tinggi biar kebaca semua */
+  transform: translateY(-180px);
   transition: transform 0.4s 0.6s ease, z-index 0.6s;
   z-index: 2;
 }
@@ -164,7 +164,6 @@ body {
   z-index: 1;
 }
 
-/* Animasi Tutup Amplop */
 .open .flap {
   transform: rotateX(180deg);
   transition: transform 0.4s ease, z-index 0.6s;
@@ -177,7 +176,6 @@ body {
   z-index: 5;
 }
 
-/* Hearts Animation */
 .hearts {
   position: absolute;
   top: 150px;
@@ -220,7 +218,6 @@ body {
 @keyframes slideUp { 0% { top: 0; opacity: 1; } 100% { top: -600px; opacity: 0; } }
 @keyframes sideSway { 0% { margin-left: 0px; } 100% { margin-left: 50px; } }
 
-/* Tombol OPEN & CLOSE */
 .reset {
   margin-top: 30px;
   display: flex;
@@ -245,28 +242,10 @@ body {
   color: #fff;
 }
 
-/* ==================== RESPONSIVE (FOR MOBILE) ==================== */
 @media (max-width: 500px) {
-  #envelope {
-    width: 320px; /* Mengecil di HP biar nda kepotong */
-    height: 220px;
-  }
-  .flap {
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-top: 130px solid #d9534f;
-  }
-  .pocket {
-    border-left: 160px solid #f5a3a2;
-    border-right: 160px solid #f5a3a2;
-    border-bottom: 110px solid #ff6f61;
-    border-top: 110px solid transparent;
-  }
-  .words {
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-  .open .letter {
-    transform: translateY(-130px);
-  }
+  #envelope { width: 320px; height: 220px; }
+  .flap { border-left: 160px solid transparent; border-right: 160px solid transparent; border-top: 130px solid #d9534f; }
+  .pocket { border-left: 160px solid #f5a3a2; border-right: 160px solid #f5a3a2; border-bottom: 110px solid #ff6f61; border-top: 110px solid transparent; }
+  .words { font-size: 0.9rem; padding: 10px; }
+  .open .letter { transform: translateY(-130px); }
 }
