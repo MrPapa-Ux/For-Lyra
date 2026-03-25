@@ -85,13 +85,13 @@
           <br/>
           <p>Oke, sejauh ini itu aja yang boleh Lyra tahu; btw kita ada Quotes keren nih:</p>
           <br/>
-          <p style="font-style: italic; color: #d9534f; font-weight: bold;">
+          <p style="font-style: italic; color: #d9534f; font-weight: bold; text-align: center;">
             "Responsabilitas affectuum sibi ferenda est. Silentium inter mutuas anxietates caecus egoismus est. Sola denique probitas ac veritas, licet amara, sanam pacem parit."
           </p>
           <br/>
           <p>Kalo Lyra tanya, "berapa lama kita buat ini semua?" jawabannya adalah: 2 jam. (Nah, sebenernya 3 jam sih xixixixi)</p>
           <br/>
-          <p>Kalo Lyra tanya, "Mengapa kta kepikiran pakai Intro lagu "Lany - You", nah, sebenarnya Lyra yang buka pintu sih wkwkwkwk</p>
+          <p>Kalo Lyra tanya, "Mengapa kta kepikiran pakai Intro lagu Lany - You", nah, sebenarnya Lyra yang buka pintu sih wkwkwkwk</p>
           <br/>
           <p><strong>Terkait tu pertemuan kita tuliskan kembali, nih:</strong></p>
           <p>🗓️ Hari/Tanggal: Jumat 27 Maret 2026</p>
@@ -101,7 +101,7 @@
 
         <div class="map-section">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d296.4542587779058!2d124.98236775458635!3d1.4176064104359132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870fe557aa5aa5%3A0xb4b93230014d2d61!2sGedung%20Kuliah%20II%20UNKLAB%20(GK2)!5e0!3m2!1sid!2sid!4v1774459513173!5m2!1sid!2sid" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d296.4542587779058!2d124.98236775458635!3d1.4176064104359132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32870fe557aa5aa5%3A0xb4b93230014d2d61!2sGedung%20Kuliah%20II%20UNKLAB%20(GK2)!5e0!3m2!1sid!2sid!4v1774459997791!5m2!1sid!2sid" 
             width="100%" 
             height="450" 
             style="border:0;" 
@@ -139,9 +139,7 @@
               Sorry kalo dia pe efek Love-Love agak lebay 🤣
             </p>
             <br/>
-            <p style="margin-top: 20px; font-style: italic; font-size: 0.9rem; color: #666;">Kta cuma da berimprovisasi sedikit hehehe....</p>
-            <br/>
-            <br/>
+            <p style="font-style: italic; font-size: 0.9rem; color: #666;">Kta cuma da berimprovisasi sedikit hehehe....</p>
           </div>
         </div>
 
@@ -162,7 +160,8 @@
     <script>
       $(document).ready(function () {
         const audioPlayer = document.getElementById("audioPlayer");
-        audioPlayer.play().catch(() => console.log("Autoplay blocked by browser."));
+        // Audio logic
+        audioPlayer.play().catch(() => console.log("Autoplay blocked by browser policy."));
 
         // Script Amplop
         var envelope = $("#envelope");
